@@ -18,7 +18,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/user", name="default_user")
+     * @Route("/index", name="default_user")
      */
     public function user() {
         $userfirstname ="Jack";
