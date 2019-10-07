@@ -1,0 +1,34 @@
+
+# 1) Créer le fichier src/Controller/CategoryController.php : 
+bin/console make:crud
+-> Category
+
+
+
+# 2) Ajouter ces lignes dans le fichier 'templates/base.html.twig' :
+---------------------------------------------------------------
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('category_index') }}">Category</a>
+                    </li>
+---------------------------------------------------------------
+
+
+
+# 3) Pour trier les catégories par ordre alphabétique, 
+#    ajouter cette méthode dans le fichier 'src/Repository/CategoryRepository.php' : 
+---------------------------------------------------------------
+    public function findAll()
+    {
+        $builder = $this->createQueryBuilder('c');
+        $builder->orderBy('c.longname', 'ASC');
+        return $builder->getQuery()->getResult();
+    }
+---------------------------------------------------------------
+
+
+
+# 4) Transformer le lien en bouton, en ajoutant   class="btn btn-primary" 
+     dans le fichier  templates\category\index.html.twig
+---------------------------------------------------------------
+    <a  class="btn btn-primary" href="{{ path('category_new') }}">Create new</a>
+---------------------------------------------------------------
