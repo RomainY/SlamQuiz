@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Editer une catégorie{% endblock %}
+{% block title %}{% trans %}Edit category{% endtrans %}{% endblock %}
 
 {% block body %}
-    <h1>Editer une catégorie</h1>
+    <h1>{% trans %}Edit category{% endtrans %}</h1>
 
-    {{ include('category/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('category/_form.html.twig', {'button_label': 'Update'|trans}) }}
 
     <a class="btn btn-primary" href="{{ path('category_index') }}">Retour à la liste <i class="fas fa-undo"></i></a>
 
