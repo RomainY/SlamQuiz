@@ -10,7 +10,7 @@
 
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
-    <button class="btn btn-primary">Se connecter </button> 
+    <a class="btn btn-primary" href="{{ path('app_login') }}">{% trans %}Login{% endtrans %}</a> 
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ 'C:/wamp64/www/SlamQuiz/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
