@@ -69,9 +69,17 @@
         <source>Are you sure you want to delete this item?</source>
         <target>Etes vous sûr de vouloir supprimer cet objet ?</target>
       </trans-unit>
-      <trans-unit id="Back to list" resname="Back to list">
+      <trans-unit id="Xaj3_8K" resname="Back to list">
         <source>Back to list</source>
         <target>Retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Déconnexion</target>
       </trans-unit>
     </body>
   </file>

@@ -63,6 +63,9 @@ class CategoryController extends AbstractController
      */
     public function edit(Request $request, Category $category): Response
     {
+
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
 

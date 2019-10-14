@@ -22,6 +22,9 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_login') }}">{% trans %}Login{% endtrans %}</a>
+            </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#">{% trans %}Home {% endtrans %}<span class="sr-only">(current)</span></a>
             </li>
@@ -47,6 +50,9 @@
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">{% trans %}Search{% endtrans %}</button>
             </form>
+            <li class="nav-item">
+                <a class="btn btn-primary" href="/logout">{% trans %}Logout{% endtrans %}</a>
+            </li>
         </div>
         </nav>
 
