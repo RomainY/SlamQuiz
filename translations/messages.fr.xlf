@@ -81,6 +81,22 @@
         <source>Logout</source>
         <target>Déconnexion</target>
       </trans-unit>
+      <trans-unit id="Sign In" resname="Sign In">
+        <source>Sign In</source>
+        <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="Register" resname="Register">
+        <source>Register</source>
+        <target>S'enregistrer</target>
+      </trans-unit>
+      <trans-unit id="agreeTerms" resname="agreeTerms">
+        <source>agreeTerms</source>
+        <target>Je suis d'accord avce les Termes et conditions</target>
+      </trans-unit>
+      <trans-unit id="plainPassword" resname="plainPassword">
+        <source>plainPassword</source>
+        <target>Mot de passe</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
