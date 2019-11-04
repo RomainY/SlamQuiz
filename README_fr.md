@@ -9,15 +9,14 @@ Slamquiz est un logiciel de Qcm , proposant un panel de questions choisies aléa
 * Tappez la commande 'git clone https://github.com/RomainY/slamstarter.git'
 * Tappez la commande 'Composer install'
 
-##Charger la base de données
+## Charger la base de données
 * Dans l'invite de commande tappez 'php bin/console doctrine:migrations:migrate'
 	* Ceci va créer la Bd
- 	*[Plan détaillé](https://github.com/RomainY/SlamQuiz/blob/develop/Astuces/00_symf_category_entity.txt)
+ 	[Plan détaillé](https://github.com/RomainY/SlamQuiz/blob/develop/Astuces/00_symf_category_entity.txt)
 * Puis tappez 'bin/console doctrine:fixtures:load'
 	* Ce qui va charger la Bd avec les données fournis dans le dossier 'src\DataFixtures'
 	* *[Pour créer de nouvelles fixtures](https://github.com/RomainY/SlamQuiz/blob/develop/Astuces/02_create_category_fixtures.txt)
 
-## Ajouter de nouvelles tables
 
 ## Utiliser le logiciel
 * Ouvrez un invite de commande windows (cmd)
