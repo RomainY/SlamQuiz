@@ -22,5 +22,5 @@ Slamquiz is a Mcq software, offering a panel of questions randomly selected
 * Open Command Prompt terminal
 * Go to 'SlamQuiz' folder [C:\>cd wamp64/www/SlamQuiz]
 * Write 'php bin/console server:run'
-* In your navigator write in the url the link you got [Often: http://127.0.0.1:8000]
+* In your browser write in the url the link you got [Often: http://127.0.0.1:8000]
 
