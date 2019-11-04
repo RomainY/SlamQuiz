@@ -10,6 +10,9 @@ Slamquiz est un logiciel de Qcm , proposant un panel de questions choisies aléa
 * Tappez la commande 'Composer install'
 
 ## Charger la base de données
+* Allez dans phpMyAdmin puis créez un utilisateur 'slamquiz', et créez ui une base de donnée avec tout les privilèges
+* Allez dans le fichier '.env' dans SlamQuiz
+	* Configurez aves les informations de votre utilisateur -> dans ###> doctrine/doctrine-bundle ###
 * Dans l'invite de commande tappez 'php bin/console doctrine:migrations:migrate'
 	* Ceci va créer la Bd
  	[Plan détaillé](https://github.com/RomainY/SlamQuiz/blob/develop/Astuces/00_symf_category_entity.txt)

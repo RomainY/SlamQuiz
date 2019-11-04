@@ -10,6 +10,9 @@ Slamquiz is a Mcq software, offering a panel of questions randomly selected
 * and 'Composer install'
 
 ## Load the DataBase
+* Go to phpMyAdmin and create an user 'slamquiz', and a database with all privileges to this user
+* Go to the '.env' file in SlamQuiz
+	* Configure your database with id and pass of your user -> in ###> doctrine/doctrine-bundle ###
 * Write 'php bin/console doctrine:migrations:migrate'
 	* Now your Database is created
  	[Plan détaillé](https://github.com/RomainY/SlamQuiz/blob/develop/Astuces/00_symf_category_entity.txt)
