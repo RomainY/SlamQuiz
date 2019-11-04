@@ -69,9 +69,37 @@
         <source>Are you sure you want to delete this item?</source>
         <target>Etes vous sûr de vouloir supprimer cet objet ?</target>
       </trans-unit>
-      <trans-unit id="Back to list" resname="Back to list">
+      <trans-unit id="Xaj3_8K" resname="Back to list">
         <source>Back to list</source>
         <target>Retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="GF_NsyJ" resname="Hello">
+        <source>Hello</source>
+        <target>Bonjour</target>
+      </trans-unit>
+      <trans-unit id="e8ajuMI" resname="This friendly message is coming from:">
+        <source>This friendly message is coming from:</source>
+        <target>Ce message vous viens de :</target>
+      </trans-unit>
+      <trans-unit id="_43haIJ" resname="Your controller at">
+        <source>Your controller at</source>
+        <target>Votre controlleur depuis :</target>
+      </trans-unit>
+      <trans-unit id="rPGZ2.r" resname="Your template at">
+        <source>Your template at</source>
+        <target>Votre template depuis :</target>
+      </trans-unit>
+      <trans-unit id="JU0yZ4o" resname="Welcome on SlamQuiz">
+        <source>Welcome on SlamQuiz</source>
+        <target>Bienvenue sur SlamQuiz</target>
+      </trans-unit>
+      <trans-unit id="cUXd9Xi" resname="This is Mcq software">
+        <source>This is Mcq software</source>
+        <target>Ceci est un logiciel de Qcm.</target>
+      </trans-unit>
+      <trans-unit id="wsEN5F4" resname="Log in to see more options">
+        <source>Log in to see more options</source>
+        <target>Connectez vous pour voir plus d'options</target>
       </trans-unit>
     </body>
   </file>

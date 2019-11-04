@@ -1,4 +1,4 @@
-
+﻿
 # 1) Création des fixtures : 
 bin/console make:fixtures
 # si besoin : composer require orm-fixtures --dev            
@@ -31,18 +31,12 @@ use App\Entity\Category;
         $category->setShortname('Symf4');
         $category->setLongname('Symfony version 4');
         $manager->persist($category);
----------------------------------------------------------------
 
 
-# 5) Charger les fixtures
+-------------------------------------------------------------------------------
+# 4) Charger les fixtures
 bin/console doctrine:fixtures:load
 -> y
-
-
-
-
-
-
 
 ---------------------------------------------------------------------------------------------------------------
 git branch -a
@@ -52,17 +46,12 @@ git commit -m "[Tests] Create 'Category' fixtures #22"
 git flow feature publish category-fixtures
 ---------------------------------------------------------------------------------------------------------------
 
-
-
 ---------------------------------------------------------------------------------------------------------------
 # Si besoin de petites modifications 
 git checkout feature/category-fixtures; git add . ; 
 git commit -m "[Tests] Create 'Category' fixtures #22"
 git checkout develop; git merge feature/category-fixtures; git push
 ---------------------------------------------------------------------------------------------------------------
-
-
-
 
 ---------------------------------------------------------------------------------------------------------------
 # Une fois que l'on est sûr que la branch de dév de la feature fonctionne bien, on fusionne et on la supprime :

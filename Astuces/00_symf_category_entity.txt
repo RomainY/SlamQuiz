@@ -1,3 +1,5 @@
+﻿Pour simplement charger les entitées existantes, allez à la partie 4
+
 ---------------------------------------------------------------------------------------------------------------
 # 1) Création de l'entité :
 bin/console make:entity
@@ -6,7 +8,7 @@ bin/console make:entity
 -> longname -> Enter -> 255 -> no 
 
 
-
+-------------------------------------------------------------------------------
 # 2) Ajout d'annotations (dans la classe  App\Entity\Category)
 use Doctrine\ORM\Mapping\Table;
 
@@ -31,21 +33,14 @@ use Doctrine\ORM\Mapping\Table;
 
 
 
-
-
-
-
+-------------------------------------------------------------------------------
 # 3) Tester le schéma : 
 bin/console doctrine:schema:create --dump-sql
 # et vérifier la présence du prefix 'tbl_' devant le nom de la table
 
 
 
-
-
-
-
-
+-------------------------------------------------------------------------------
 # 4) Création de la migration : 
 bin/console doctrine:migrations:diff 
 bin/console doctrine:migrations:migrate

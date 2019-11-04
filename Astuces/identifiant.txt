@@ -1,0 +1,7 @@
+id : slamquiz
+
+mdp : z1x7HnZXo6iBndNf
+
+=========================
+
+Pour ce connecter à la wamp64 avec l'utilsateur slamquiz
