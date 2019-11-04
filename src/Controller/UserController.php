@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/", name="users_index", methods={"GET"})
+     * @Route("/", name="user_index", methods={"GET"})
      */
     public function index(UserRepository $userRepository): Response
     {
@@ -39,7 +39,7 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('users_index');
+            return $this->redirectToRoute('user_index');
         }
 
         return $this->render('user/new.html.twig', [
@@ -69,7 +69,7 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('users_index');
+            return $this->redirectToRoute('user_index');
         }
 
         return $this->render('user/edit.html.twig', [
@@ -89,6 +89,6 @@ class UserController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('users_index');
+        return $this->redirectToRoute('user_index');
     }
 }

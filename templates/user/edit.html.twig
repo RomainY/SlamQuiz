@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Edit User</h1>
 
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('user/_form.html.twig', {'button_label': 'Update'|trans}) }}
 
-    <a href="{{ path('user_index') }}">back to list</a>
+    <a class="btn btn-primary" href="{{ path('user_index') }}">{% trans %}Back to list{% endtrans %} <i class="fas fa-undo"></i></a>
 
     {{ include('user/_delete_form.html.twig') }}
 {% endblock %}

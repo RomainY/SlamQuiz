@@ -11,7 +11,6 @@
                 <th>Id</th>
                 <th>Email</th>
                 <th>Roles</th>
-                <th>Password</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -21,10 +20,9 @@
                 <td>{{ user.id }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
                 <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                    <a class="btn btn-primary" href="{{ path('user_show', {'id': user.id}) }}">{% trans %}Show{% endtrans %} <i class="far fa-eye"></i></a>
+                    <a class="btn btn-primary" href="{{ path('user_edit', {'id': user.id}) }}">{% trans %}Edit{% endtrans %} <i class="fas fa-hammer"></i></a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('user_new') }}">Create new</a>
+    <a class="btn btn-primary" href="{{ path('user_new') }}">{% trans %}Create new{% endtrans %} <i class="fas fa-marker"></i></a>
 {% endblock %}

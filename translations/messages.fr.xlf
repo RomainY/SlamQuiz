@@ -93,9 +93,13 @@
         <source>agreeTerms</source>
         <target>Je suis d'accord avce les Termes et conditions</target>
       </trans-unit>
-      <trans-unit id="plainPassword" resname="plainPassword">
-        <source>plainPassword</source>
+      <trans-unit id="Password" resname="Password">
+        <source>Password</source>
         <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="Users index" resname="Users index">
+        <source>Users index</source>
+        <target>Liste des utilisateurs</target>
       </trans-unit>
     </body>
   </file>

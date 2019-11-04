@@ -14,7 +14,7 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="#">SlamQuiz</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
                 <a class="nav-link" href="{{ path('app_login') }}">{% trans %}Login{% endtrans %}</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">{% trans %}Home {% endtrans %}<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">{% trans %}Home {% endtrans %}<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">{% trans %}Link{% endtrans %}</a>
@@ -45,9 +45,12 @@
                     <a class="dropdown-item" href="#">{% trans %}Something else here{% endtrans %}</a>
                 </div>
             </li>
+            {% if is_granted('ROLE_SUPER-ADMIN') %}
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('user_index') }}">{% trans %}Users index{% endtrans %}</a>
             </li>
+            {% endif %}
+            
             </ul>
             <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

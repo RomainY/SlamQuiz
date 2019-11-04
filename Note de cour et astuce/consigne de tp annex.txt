@@ -1,0 +1,54 @@
+# 1) Enregistrer une nouvelle note dans le Kamban
+# [DOC] Add README file
+# déplacer cette note dans la colonne "In progress" 
+# transformer la note en rescue
+# et mémoriser le numéro de l'issue (par exemple #3)
+
+
+# 2) Créer une branche "readme" pour cette nouvelle fonctionnalité : 
+git flow feature start readme
+
+
+# 3) Modifier la page d'accueil "slamquiz\templates\default\index.html.twig"
+(il s'agit du template utiliser pour la route '/') 
+pour afficher une petite présentation du logiciel
+
+# Utiliser notamment le composant "jumbotron" de Bootstrap : 
+--------------------------------------
+<div class="jumbotron"> 
+...
+</div>
+--------------------------------------
+
+# Penser à traduire les messages de cette page d'accueil, 
+# via le fichier "slamquiz\translations\messages.fr.xlf" 
+
+
+# 4) Faire une copie d'écran de cette page d'accueil 
+enregistrée sous le fichier "screenshot_home.jpg"
+(sans la barre de debug de Symfony)
+et le placer dans le dossier "slamquiz/assets/" 
+
+
+# 5) Lire la présentation de Wikipedia sur le langage Markdown : 
+https://fr.wikipedia.org/wiki/Markdown
+
+
+# 6) Créer un fichier README.md à la racine du projet, 
+pour présenter le logiciel, et les étapes à suivre pour l'installer
+
+ 
+# 7) Commit :
+git checkout feature/readme 
+git add . 
+git commit -m "[DOC] Add README file #4"
+
+
+# 8) Push
+git flow feature publish readme
+
+
+# 9) Après vérification (par votre co-équipier si travail en équipe) : 
+Une fois que l'on est sûr que la branch de dév de la feature fonctionne bien, on fusionne et on la supprime :
+git flow feature finish readme
+# et l'on se retrouve dans la branch develop
