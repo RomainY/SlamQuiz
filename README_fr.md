@@ -2,6 +2,7 @@
 ================================
 ## Présentation
 Slamquiz est un logiciel de Qcm , proposant un panel de questions choisies aléatoirement 
+![Accueil](https://raw.githubusercontent.com/RomainY/SlamQuiz/develop/assets/screenshot_home.PNG)
 
 ## Installation du logiciel
 * Ouvrez un invite de commande windows (cmd)
@@ -23,6 +24,4 @@ Slamquiz est un logiciel de Qcm , proposant un panel de questions choisies aléa
 * Placez vous dans le répertoire 'SlamQuiz' [C:\>cd wamp64/www/SlamQuiz]
 * Tappez la commande 'php bin/console server:run'
 * dans votre navigateur tappez dans l'url le chemin donné [Souvent: http://127.0.0.1:8000]
-* Résultat obtenu 
 
-![Accueil](https://raw.githubusercontent.com/RomainY/SlamQuiz/develop/assets/screenshot_home.PNG)
