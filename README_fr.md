@@ -12,7 +12,7 @@ Slamquiz est un logiciel de Qcm , proposant un panel de questions choisies aléa
 * Dans l'invite de commande tappez 'php bin/console doctrine:migrations:migrate'
 	* Ceci va créer la Bd
  	*[Plan détaillé](https://github.com/RomainY/SlamQuiz/blob/develop/Astuces/00_symf_category_entity.txt)
-* Puis tappez ''
+* Puis tappez 'bin/console doctrine:fixtures:load'
 	* Ce qui va charger la Bd avec les données fournis dans le dossier 'src\DataFixtures'
 	* *[Pour créer de nouvelles fixtures](https://github.com/RomainY/SlamQuiz/blob/develop/Astuces/02_create_category_fixtures.txt)
 
