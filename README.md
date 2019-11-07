@@ -6,7 +6,7 @@ Slamquiz is a Mcq software, offering a panel of questions randomly selected
 
 ## Setup
 * Open Command Prompt terminal
-* Write `git clone https://github.com/RomainY/slamstarter.git`
+* Write `git clone https://github.com/RomainY/SlamQuiz.git`
 * and `Composer install`
 
 ## Load the DataBase
