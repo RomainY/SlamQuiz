@@ -16,7 +16,7 @@ Slamquiz is a Mcq software, offering a panel of questions randomly selected
 * Write 'php bin/console doctrine:migrations:migrate'
 	* Now your Database is created
  	[Plan détaillé](https://github.com/RomainY/SlamQuiz/blob/develop/Astuces/00_symf_category_entity.txt)
-* Write 'bin/console doctrine:fixtures:load'
+* Write 'php bin/console doctrine:fixtures:load'
 	* The  database are created with data in the 'src\DataFixtures' folders
 	* *[Create additional fixtures](https://github.com/RomainY/SlamQuiz/blob/develop/Astuces/02_create_category_fixtures.txt)
 
