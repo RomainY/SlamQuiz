@@ -6,7 +6,7 @@ Slamquiz est un logiciel de Qcm , proposant un panel de questions choisies aléa
 
 ## Installation du logiciel
 * Ouvrez un invite de commande windows (cmd)
-* Tappez la commande 'git clone https://github.com/RomainY/slamstarter.git'
+* Tappez la commande 'git clone https://github.com/RomainY/SlamQuiz.git'
 * Tappez la commande 'Composer install'
 
 ## Charger la base de données
