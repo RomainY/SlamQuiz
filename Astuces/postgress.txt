@@ -1,0 +1,135 @@
+# 1) Enregistrer une nouvelle note dans le Kamban
+# [Core] Add PostgreSql config
+# déplacer cette note dans la colonne "In progress" 
+# transformer la note en rescue
+# et mémoriser le numéro de l'issue (par exemple #3)
+
+
+# 2) Télécharger PostgreSQL 
+version 12.0 pour Windows x86-64
+https://www.postgresql.org/
+
+
+# 3) Installer PostgreSQL
+avec les paramètres par défaut
+(l'exécution de StackBuilder, pour ajouter des composants additionnels est inutiles).
+
+
+# 4) Configuration du chemin des utilitaires
+Maintenant que PostgreSQL est installé, il faut ajouter les utilitaires dans la variable d'environnement "PATH".
+
+Pour cela il faut ouvrir le Panneau de configuration >> Système et sécurité >> Système et cliquer sur "Paramètres système avancés" dans la liste de gauche.
+
+Une fenêtre s'ouvre. Cliquer sur "Variables d'environnements...". Dans la liste des variables système modifier la variable "PATH" et ajouter le chemin de PostgreSQL du dossier \bin.
+
+
+# 5)Démarrer le logiciel "PgAdmin 4" 
+(via "PostgreSQL 12" dans le menu "Démarrer" de Windows)
+pour découvrir les composants de PostgreSQL
+
+
+# 6) Créer une branche pour cette amélioration avec : 
+git flow feature start postgres-config 
+
+
+# 7) Créer un utilisateur dans PostgreSQL : 
+# Pour les commandes suivantes, veuillez remplacer 'db_password' par un mot de passe plus sécurisé.
+
+Ouvrir un terminal (Commandes Windows)
+et saisir la commande suivante (et le mot de passe saisi à l'installation de PostgreSQL) :
+psql -U postgres
+
+# pour information, sous linux, la commande serait  : 
+sudo -i -u postgres
+
+
+CREATE DATABASE slamquiz;
+CREATE ROLE slamquiz password 'db_password' login;
+GRANT ALL ON DATABASE slamquiz TO slamquiz WITH GRANT OPTION;
+\q
+exit
+ 
+ 
+
+
+# 8) Modifier le fichier 'config/packages/doctrine.yaml'
+--------------------------------------------
+doctrine:
+    dbal:
+        # configure these for your MySQL database server
+        # driver: 'pdo_mysql'
+        # server_version: '5.7'
+        # charset: utf8mb4
+        # default_table_options:
+        #     charset: utf8mb4
+        #     collate: utf8mb4_unicode_ci
+
+        # configure these for your PostgreSQL database server
+        driver: 'pdo_pgsql'
+        charset: utf8
+--------------------------------------------
+
+
+# 9) Dans les fichiers '.env' et '.env.local', modifier la variable "DATABASE_URL"
+# Commenter la ligne pour MySQL
+#DATABASE_URL=mysql://slamquiz:...
+# et ajouter pour PostgreSQL : 
+# For PostgreSQL database server
+DATABASE_URL=pgsql://slamquiz:db_password@127.0.0.1:5432/slamquiz
+
+
+# 10) Effacer les fichiers "Version2019xxxxxxxx.php" présents dans le dossier "src\Migrations" 
+
+
+# 11) Tester le schéma : 
+php bin/console doctrine:schema:create --dump-sql
+------------------------------------------------
+EN CAS D'ERREUR DE DRIVER MANQUANT
+allez dans le dossier de la versions php en cour dans le dossier wamp
+ici : C:\wamp64\bin\php\php7.3.5
+Ouvrir le fichier 'php.ini'
+Rechercher 'extension=pdo_pgsql' s'il est commenté (avec un ; au début) alors décommenté le 
+--------------------------------------------------------------------------------------------
+
+# 12) Création de la migration pour PostgreSQL : 
+php bin/console doctrine:migrations:diff 
+php bin/console doctrine:migrations:migrate
+-> y
+
+
+# 13) Démarrer le logiciel "PgAdmin 4" 
+(via "PostgreSQL 12" dans le menu "Démarrer" de Windows)
+pour vérifier les nouvelles tables PostgreSQL dans la base de données "slamquiz"
+
+# 14) Charger les fixtures
+php bin/console doctrine:fixtures:load
+-> y
+
+
+# 15) Tester la connection d'un utilisateur, via la lecture dans la base de données sous PostgreSQL
+
+http://localhost:8000/login
+
+
+# 16) Ajouter une nouvelle catégorie, via le logiciel SlamQuiz 
+par exemple 
+Nom court = "pgsql" 
+Nom long = " PostgreSQL"
+
+-> vérifier que cette nouvelle catégorie NE se retrouve PAS dans MySQL (à l'aide de "PhpMyAdmin")
+-> vérifier que cette nouvelle catégorie se retrouve dans PostgreSQL (à l'aide de "PgAdmin 4")
+
+
+--------------------------------------------
+git add .
+git commit -m "[Core] Add PostgreSql config #3"
+git flow feature publish postgres-config
+--------------------------------------------
+
+
+--------------------------------------------
+# Après vérification (par votre co-équipier si travail en équipe) : 
+Une fois que l'on est sûr que la branch de dév de la feature fonctionne bien, on fusionne et on la supprime :
+git flow feature finish postgres-config
+# et l'on se retrouve dans la branch develop
+--------------------------------------------
