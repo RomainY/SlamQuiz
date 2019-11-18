@@ -85,7 +85,7 @@ DATABASE_URL=pgsql://slamquiz:db_password@127.0.0.1:5432/slamquiz
 php bin/console doctrine:schema:create --dump-sql
 ------------------------------------------------
 EN CAS D'ERREUR DE DRIVER MANQUANT
-allez dans le dossier de la versions php en cour dans le dossier wamp
+Allez dans le dossier de la versions php en cour dans le dossier wamp
 ici : C:\wamp64\bin\php\php7.3.5
 Ouvrir le fichier 'php.ini'
 Rechercher 'extension=pdo_pgsql' s'il est commenté (avec un ; au début) alors décommenté le 
