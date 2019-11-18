@@ -100,6 +100,33 @@
       <trans-unit id="wsEN5F4" resname="Log in to see more options">
         <source>Log in to see more options</source>
         <target>Connectez vous pour voir plus d'options</target>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="Sign In" resname="Sign In">
+        <source>Sign In</source>
+        <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="Register" resname="Register">
+        <source>Register</source>
+        <target>S'enregistrer</target>
+      </trans-unit>
+      <trans-unit id="agreeTerms" resname="agreeTerms">
+        <source>agreeTerms</source>
+        <target>Je suis d'accord avce les Termes et conditions</target>
+      </trans-unit>
+      <trans-unit id="Password" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="Users index" resname="Users index">
+        <source>Users index</source>
+        <target>Liste des utilisateurs</target>
       </trans-unit>
     </body>
   </file>
