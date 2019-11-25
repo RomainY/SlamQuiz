@@ -28,5 +28,7 @@
          <a class="btn btn-primary" href="{{ path('category_edit', {'id': category.id}) }}">{% trans %}Edit{% endtrans %} <i class="fas fa-hammer"></i></a> 
     {% endif %}
 
-    {{ include('category/_delete_form.html.twig') }}
+    {% if is_granted('ROLE_SUPER-ADMIN') %}
+        {{ include('category/_delete_form.html.twig') }}
+    {% endif %}
 {% endblock %}
