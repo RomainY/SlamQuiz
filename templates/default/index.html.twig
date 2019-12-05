@@ -8,14 +8,19 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
+{#
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
-    <button class="btn btn-primary">Se connecter </button> 
+    <a class="btn btn-primary" href="{{ path('app_login') }}">{% trans %}Login{% endtrans %}</a> 
     This friendly message is coming from:
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/SlamQuiz/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/SlamQuiz/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
-    </ul>
-    
+        <li>{% trans %}Your controller at{% endtrans %} <code><a href="{{ 'C:/wamp64/www/SlamQuiz/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
+        <li>{% trans %}Your template at{% endtrans %} <code><a href="{{ 'C:/wamp64/www/SlamQuiz/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
+    </ul>   
+</div>
+#}
+<button class="btn btn-primary">Se connecter </button> 
+<div class="jumbotron"> 
+{% trans %}Log in to see more options{% endtrans %}
 </div>
 {% endblock %}

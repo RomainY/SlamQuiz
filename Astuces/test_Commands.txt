@@ -1,0 +1,36 @@
+https://symfony.com/doc/current/testing.html
+
+To build better and more reliable applications, 
+you should test your code using both functional and unit tests.
+
+------------------------------------------------------------------------
+Before creating your first test, install the PHPUnit Bridge component, 
+which wraps the original PHPUnit binary to provide additional features:
+
+	> composer require --dev symfony/phpunit-bridge
+
+------------------------------------------------------------------------
+You can run all of your application's tests with the following command:*
+[ a test is a PHP class that should live in the tests/ directory of your application ]
+
+	> ./bin/phpunit
+
+[ PHPUnit is configured by the phpunit.xml.dist file in the root of your Symfony application ]
+
+! Si la commande est absente, alors il faut supprimer puis ré-installer le package
+
+	> composer remove symfony/phpunit-bridge
+
+	> composer require --dev symfony/phpunit-bridge	 
+
+------------------------------------------------------------------------
+Test commands 
+ 
+	run all tests of the application
+ 	> php bin/phpunit
+
+	run all tests in the Util/directory
+ 	> php bin/phpunit tests/Util
+
+	run test for the Calculator calss
+ 	> php bin/phpunit tests/Util/CalculatorTest.php
