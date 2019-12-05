@@ -1,6 +1,8 @@
 language: php
 php:
   - 7.3.5
+services:
+  - postgresql
 env:
   - DATABASE_URL=pgsql://slamquiz:admin@127.0.0.1:5432/slamquiz
 before_script:
