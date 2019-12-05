@@ -1,4 +1,5 @@
 # SlamQuiz
+[![Build Status](https://travis-ci.org/RomainY/SlamQuiz.svg?branch=master)
 ================================
 ## Présentation
 Slamquiz est un logiciel de Qcm , proposant un panel de questions choisies aléatoirement 

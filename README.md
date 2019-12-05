@@ -1,4 +1,5 @@
 # SlamQuiz
+[![Build Status](https://travis-ci.org/RomainY/SlamQuiz.svg?branch=master)
 ================================
 ## Introduction
 Slamquiz is a Mcq software, offering a panel of questions randomly selected 
