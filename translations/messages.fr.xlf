@@ -51,7 +51,7 @@
       </trans-unit>
       <trans-unit id="nz33U6Q" resname="Create new">
         <source>Create new</source>
-        <target>Créer une nouvelle categorie</target>
+        <target>Créer une nouvelle entrée</target>
       </trans-unit>
       <trans-unit id="IWEN1vH" resname="Edit category">
         <source>Edit category</source>

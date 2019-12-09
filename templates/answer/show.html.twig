@@ -1,0 +1,34 @@
+ {% extends 'base.html.twig' %}
+
+{% block title %}Answer{% endblock %}
+
+{% block body %}
+    <h1>Answer</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ answer.id }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ answer.text }}</td>
+            </tr>
+            <tr>
+                <th>Correct</th>
+                <td>{{ answer.correct }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('answer_index') }}">{% trans %}Back to list{% endtrans %} <i class="fas fa-undo"></i></a>
+
+    {% if is_granted('ROLE_ADMIN') %}
+         <a class="btn btn-primary" href="{{ path('answer_edit', {'id': answer.id}) }}">{% trans %}Edit{% endtrans %} <i class="fas fa-hammer"></i></a> 
+    {% endif %}
+
+    {% if is_granted('ROLE_SUPER-ADMIN') %}
+        {{ include('answer/_delete_form.html.twig') }}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Answer index{% endblock %}
+
+{% block body %}
+    <h1>Answer index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Text</th>
+                <th>Correct</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for answer in answers %}
+            <tr>
+                <td>{{ answer.id }}</td>
+                <td>{{ answer.text }}</td>
+                <td>{{ answer.correct }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('answer_show', {'id': answer.id}) }}">{% trans %}Show{% endtrans %} <i class="far fa-eye"></i></a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a class="btn btn-primary" href="{{ path('answer_edit', {'id': answer.id}) }}">{% trans %}Edit{% endtrans %} <i class="fas fa-hammer"></i></a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <a class="btn btn-primary" href="{{ path('answer_new') }}">{% trans %}Create new{% endtrans %} <i class="fas fa-marker"></i></a>
+    {% endif %}
+{% endblock %}

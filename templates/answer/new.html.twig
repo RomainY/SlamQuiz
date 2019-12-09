@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Create new{% endtrans %}{% endblock %}
+
+{% block body %}
+    <h2>{% trans %}Create new{% endtrans %}</h2>
+
+    {{ include('answer/_form.html.twig') }}
+
+    <a class="btn btn-danger" href="{{ path('answer_index') }}">{% trans %}Back to list{% endtrans %}</a>
+{% endblock %}
