@@ -42,7 +42,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="{{ path('category_index') }}">{% trans %}Category{% endtrans %}</a>
                     <a class="dropdown-item" href="{{ path('answer_index') }}">{% trans %}Answer{% endtrans %}</a>
-                    <a class="dropdown-item" href="#">{% trans %}Something else here{% endtrans %}</a>
+                    <a class="dropdown-item" href="{{ path('question_index') }}">{% trans %}Question{% endtrans %}</a>
                 </div>
             </li>
             {% if is_granted('ROLE_SUPER-ADMIN') %}
