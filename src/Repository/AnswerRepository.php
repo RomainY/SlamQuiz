@@ -47,4 +47,11 @@ class AnswerRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAll()
+    {
+        $builder = $this->createQueryBuilder('a');
+        $builder->orderBy('a.text', 'ASC');
+        return $builder->getQuery()->getResult();
+    }
 }

@@ -15,6 +15,8 @@ class AnswerType extends AbstractType
             ->add('text')
             ->add('correct')
         ;
+
+        
     }
 
     public function configureOptions(OptionsResolver $resolver)
