@@ -23,9 +23,14 @@ class Answer
     private $text;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="boolean")
      */
     private $correct;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Question", inversedBy="answers")
+     */
+    private $question;
 
     public function getId(): ?int
     {
@@ -44,14 +49,26 @@ class Answer
         return $this;
     }
 
-    public function getCorrect(): ?string
+    public function getCorrect(): ?bool
     {
         return $this->correct;
     }
 
-    public function setCorrect(string $correct): self
+    public function setCorrect(bool $correct): self
     {
         $this->correct = $correct;
+
+        return $this;
+    }
+
+    public function getQuestion(): ?Question
+    {
+        return $this->question;
+    }
+
+    public function setQuestion(?Question $question): self
+    {
+        $this->question = $question;
 
         return $this;
     }

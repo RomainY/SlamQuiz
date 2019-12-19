@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Answer{% endblock %}
+{% block title %}{% trans %}Edit Answer{% endtrans %}{% endblock %}
 
 {% block body %}
-    <h1>Edit Answer</h1>
+    <h1>{% trans %}Edit Answer{% endtrans %}</h1>
 
     {{ include('answer/_form.html.twig', {'button_label': 'Update'}) }}
 

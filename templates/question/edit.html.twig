@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Question{% endblock %}
+
+{% block body %}
+    <h1>Edit Question</h1>
+
+    {{ include('question/_form.html.twig', {'button_label': 'Update'|trans}) }}
+
+    <a class="btn btn-primary" href="{{ path('question_index') }}">{% trans %}Back to list{% endtrans %} <i class="fas fa-undo"></i></a>
+
+    {% if is_granted('ROLE_SUPER-ADMIN') %}
+        {{ include('question/_delete_form.html.twig') }}
+    {% endif %}
+{% endblock %}
