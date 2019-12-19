@@ -34,7 +34,7 @@ class Category
     private $longname;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Question", mappedBy="categories")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Question", mappedBy="categories")
      */
     private $questions;
 
@@ -84,7 +84,7 @@ class Category
     {
         if (!$this->questions->contains($question)) {
             $this->questions[] = $question;
-            $question->setCategories($this);
+            $question->addCategory($this);
         }
 
         return $this;
@@ -94,10 +94,7 @@ class Category
     {
         if ($this->questions->contains($question)) {
             $this->questions->removeElement($question);
-            // set the owning side to null (unless already changed)
-            if ($question->getCategories() === $this) {
-                $question->setCategories(null);
-            }
+            $question->removeCategory($this);
         }
 
         return $this;

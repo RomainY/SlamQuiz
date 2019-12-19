@@ -25,19 +25,14 @@ class Answer
     private $text;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="boolean")
      */
     private $correct;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Question", mappedBy="answer", orphanRemoval=true)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Question", inversedBy="answers")
      */
-    private $questions;
-
-    public function __construct()
-    {
-        $this->questions = new ArrayCollection();
-    }
+    private $question;
 
     public function getId(): ?int
     {
@@ -56,45 +51,26 @@ class Answer
         return $this;
     }
 
-    public function getCorrect(): ?string
+    public function getCorrect(): ?bool
     {
         return $this->correct;
     }
 
-    public function setCorrect(string $correct): self
+    public function setCorrect(bool $correct): self
     {
         $this->correct = $correct;
 
         return $this;
     }
 
-    /**
-     * @return Collection|Question[]
-     */
-    public function getQuestions(): Collection
+    public function getQuestion(): ?Question
     {
-        return $this->questions;
+        return $this->question;
     }
 
-    public function addQuestion(Question $question): self
+    public function setQuestion(?Question $question): self
     {
-        if (!$this->questions->contains($question)) {
-            $this->questions[] = $question;
-            $question->setAnswer($this);
-        }
-
-        return $this;
-    }
-
-    public function removeQuestion(Question $question): self
-    {
-        if ($this->questions->contains($question)) {
-            $this->questions->removeElement($question);
-            // set the owning side to null (unless already changed)
-            if ($question->getAnswer() === $this) {
-                $question->setAnswer(null);
-            }
-        }
+        $this->question = $question;
 
         return $this;
     }

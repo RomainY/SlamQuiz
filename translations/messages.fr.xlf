@@ -33,6 +33,14 @@
         <source>Longname</source>
         <target>Description</target>
       </trans-unit>
+      <trans-unit id="cXVRejc" resname="or">
+        <source>or</source>
+        <target>ou</target>
+      </trans-unit>
+      <trans-unit id="BpW1Y6z" resname="with">
+        <source>with</source>
+        <target>avec</target>
+      </trans-unit>
       <trans-unit id="ScJmuqq" resname="Search">
         <source>Search</source>
         <target>Rechercher</target>
@@ -51,11 +59,15 @@
       </trans-unit>
       <trans-unit id="nz33U6Q" resname="Create new">
         <source>Create new</source>
-        <target>Créer une nouvelle entrée</target>
+        <target>Créer une nouvelle </target>
       </trans-unit>
       <trans-unit id="IWEN1vH" resname="Edit category">
         <source>Edit category</source>
         <target>Editer une catégorie</target>
+      </trans-unit>
+      <trans-unit id="nVRn3MP" resname="Edit Answer">
+        <source>Edit Answer</source>
+        <target>Editer une réponse</target>
       </trans-unit>
       <trans-unit id="wcEAnT8" resname="Update">
         <source>Update</source>
@@ -109,25 +121,33 @@
         <source>Logout</source>
         <target>Déconnexion</target>
       </trans-unit>
-      <trans-unit id="Sign In" resname="Sign In">
+      <trans-unit id="vMC8yRQ" resname="Sign In">
         <source>Sign In</source>
         <target>Créer un compte</target>
       </trans-unit>
-      <trans-unit id="Register" resname="Register">
+      <trans-unit id="u3I07BJ" resname="Register">
         <source>Register</source>
         <target>S'enregistrer</target>
       </trans-unit>
-      <trans-unit id="agreeTerms" resname="agreeTerms">
+      <trans-unit id="0niVptT" resname="agreeTerms">
         <source>agreeTerms</source>
         <target>Je suis d'accord avce les Termes et conditions</target>
       </trans-unit>
-      <trans-unit id="Password" resname="Password">
+      <trans-unit id="588_9PF" resname="Password">
         <source>Password</source>
         <target>Mot de passe</target>
       </trans-unit>
-      <trans-unit id="Users index" resname="Users index">
+      <trans-unit id="H2OTy1l" resname="Users index">
         <source>Users index</source>
         <target>Liste des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="StCgpq5" resname="Answers">
+        <source>Answers</source>
+        <target>Réponses</target>
+      </trans-unit>
+      <trans-unit id="D5lam8." resname="no records found">
+        <source>no records found</source>
+        <target>pas d'enregistrement trouvé</target>
       </trans-unit>
     </body>
   </file>

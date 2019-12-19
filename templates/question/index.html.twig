@@ -10,9 +10,8 @@
             <tr>
                 <th>Id</th>
                 <th>Text</th>
-                <th>Created_at</th>
-                <th>Updated_at</th>
                 <th>actions</th>
+                <th>Categories</th>
             </tr>
         </thead>
         <tbody>
@@ -20,22 +19,28 @@
             <tr>
                 <td>{{ question.id }}</td>
                 <td>{{ question.text }}</td>
-                <td>{{ question.createdAt ? question.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ question.updatedAt ? question.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('question_show', {'id': question.id}) }}">show</a>
-                    <a href="{{ path('question_edit', {'id': question.id}) }}">edit</a>
+                    {% for categorie in question.categories %}
+                        {{ categorie.shortname }}
+                    {% endfor %}
+                </td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('question_show', {'id': question.id}) }}">{% trans %}Show{% endtrans %} <i class="far fa-eye"></i></a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a class="btn btn-primary" href="{{ path('question_edit', {'id': question.id}) }}">{% trans %}Edit{% endtrans %} <i class="fas fa-hammer"></i></a> 
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">{% trans %}no records found{% endtrans %}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    {% if is_granted('ROLE_ADMIN') %}
-        <a  class="btn btn-primary" href="{{ path('question_new') }}">{% trans %}Create new{% endtrans %} <i class="fas fa-marker"></i></a>
-    {% endif %}
+    {% trans %}Create new{% endtrans %}question {% trans %}with{% endtrans %}
+    <a href="{{ path('question_new', {'nb': 2}) }}"> 2 {% trans %}Answers{% endtrans %}</a>,
+    <a href="{{ path('question_new', {'nb': 3}) }}"> 3 {% trans %}Answers{% endtrans %}</a>
+    {% trans %}or{% endtrans %} <a href="{{ path('question_new', {'nb': 4}) }}"> 4 {% trans %}Answers{% endtrans %}</a>
 {% endblock %}
